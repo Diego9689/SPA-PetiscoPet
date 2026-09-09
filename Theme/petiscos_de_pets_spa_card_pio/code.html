@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Petiscos de Pets - Lanchonete Natural</title>
+<!-- Google Fonts: Poppins & Open Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "surface-dim": "#dadada",
+            "inverse-on-surface": "#f1f1f1",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2e2",
+            "surface-container-low": "#f3f3f3",
+            "outline-variant": "#dcc1b3",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#4c4800",
+            "primary-container": "#b85809",
+            "surface": "#f9f9f9",
+            "background": "#f9f9f9",
+            "tertiary-container": "#535fff",
+            "secondary-container": "#efe517",
+            "surface-container": "#eeeeee",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#bec2ff",
+            "on-secondary-fixed": "#1e1c00",
+            "on-primary-fixed-variant": "#753400",
+            "on-tertiary-fixed-variant": "#000beb",
+            "on-secondary-container": "#6a6500",
+            "primary-fixed-dim": "#ffb68b",
+            "inverse-surface": "#303030",
+            "secondary-fixed": "#f2e71c",
+            "surface-tint": "#994700",
+            "tertiary-fixed": "#e0e0ff",
+            "outline": "#897266",
+            "on-tertiary-fixed": "#00026c",
+            "secondary": "#656100",
+            "surface-variant": "#e2e2e2",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#fff9f8",
+            "on-surface-variant": "#564338",
+            "on-surface": "#1b1b1b",
+            "inverse-primary": "#ffb68b",
+            "on-background": "#1b1b1b",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbc8",
+            "secondary-fixed-dim": "#d4cb00",
+            "on-primary-fixed": "#321200",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#fdf9ff",
+            "surface-container-high": "#e8e8e8",
+            "tertiary": "#2b36ff",
+            "surface-bright": "#f9f9f9",
+            "primary": "#944400"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sheet-bottom-safe": "5.5rem",
+            "space-2xl": "3rem",
+            "screen-gutter": "1rem",
+            "space-xl": "2rem",
+            "space-2xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "card-gap": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Open Sans"],
+            "headline-md": ["Poppins"],
+            "headline-xl": ["Poppins"],
+            "body-sm": ["Open Sans"],
+            "headline-lg": ["Poppins"],
+            "body-lg": ["Open Sans"],
+            "headline-sm": ["Poppins"],
+            "label-md": ["Open Sans"],
+            "label-sm": ["Open Sans"],
+            "price-tag": ["Poppins"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.2px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+            "price-tag": ["16px", { "lineHeight": "20px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Hide scrollbars smoothly for category navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary">
+<!-- Outer Central Container bounded at 480px -->
+<div class="max-w-[480px] mx-auto min-h-screen bg-surface-container-lowest shadow-sm flex flex-col relative overflow-x-hidden">
+<!-- TopAppBar (Shared Component Execution) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-screen-gutter py-space-xs max-w-[480px] mx-auto w-full bg-surface shadow-sm">
+<div class="flex items-center gap-2">
+<img alt="Logo Petiscos de Pets com cachorro e gato sorridentes" class="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkGWwYaEdmlJONpaP9ezW_sR4F26NeBKkD4xt0ShhGn5jnMoKKbR3OL1RlblTU8gFR_Bvyy7oWBhvNrRUmrhfeBu4DC2WWbTEhukGSR3sv2ELDlcamJMQ944biQv7dKEe2w8gnEJxsrnUnNCf2sexbRfsNe8rqekgQr9FpaT1YgNAEAj0nOkViJPbTAGkJVZmlRBxUlzZZboUeRwln0PBxmSbbpC0UMkVjses0VdVThh8qwuPBx0PGLZqNMMVjDvFnkA"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary leading-tight">Petiscos de Pets</h1>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container inline-block"></span>
+<span>Aberto • Ter a Dom 10h-22h</span>
+</div>
+</div>
+</div>
+<button aria-label="Abrir Carrinho" class="relative p-2 rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface" id="headerCartBtn">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+<span class="absolute top-0 right-0 bg-tertiary text-on-tertiary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold scale-0 transition-transform duration-200" id="cartCountBadge">0</span>
+</button>
+</header>
+<!-- CONTENT WRAPPER: Multi-step SPA Flows -->
+<main class="flex-1 pb-sheet-bottom-safe">
+<!-- ================= 1. VIEW: CARDÁPIO (HOME) ================= -->
+<section class="block" id="viewCardapio">
+<!-- Hero Banner -->
+<div class="px-screen-gutter pt-space-md pb-space-sm">
+<div class="bg-primary-container rounded-xl p-space-md text-on-primary shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="z-10 max-w-[240px]">
+<span class="inline-flex items-center gap-1 bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full mb-2">
+<span class="material-symbols-outlined text-xs">pets</span>
+                100% Artesanal &amp; Natural
+              </span>
+<h2 class="font-headline-lg text-headline-lg font-bold leading-tight">Lanchonete Natural para Cães &amp; Gatos</h2>
+<p class="font-body-sm text-body-sm opacity-90 mt-1">Petiscos saudáveis e amor em cada receita.</p>
+</div>
+<!-- Background paw watermarks -->
+<span class="material-symbols-outlined fill-icon absolute -right-6 -bottom-6 text-9xl text-white/10 select-none pointer-events-none">pets</span>
+</div>
+</div>
+<!-- Store Info Bar -->
+<div class="px-screen-gutter py-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm border-b border-surface-container-high pb-space-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-primary">schedule</span>
+            10:00 - 22:00
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-tertiary">storefront</span>
+            Retirada &amp; Entrega
+          </span>
+<a class="flex items-center gap-1 text-primary font-bold hover:underline" href="https://wa.me/5511999999999" target="_blank">
+<span class="material-symbols-outlined text-base">phone</span>
+            WhatsApp
+          </a>
+</div>
+<!-- Category Horizontal Filter Tabs -->
+<div class="sticky top-[60px] z-30 bg-surface-container-lowest/95 backdrop-blur-md px-screen-gutter py-space-sm border-b border-surface-container">
+<div class="flex gap-2 overflow-x-auto no-scrollbar" id="categoryChips">
+<button class="category-chip active-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-primary-container text-on-primary shadow-sm whitespace-nowrap" data-cat="todos">
+              Todos
+            </button>
+<button class="category-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-surface text-on-surface border border-surface-container-high hover:bg-surface-container whitespace-nowrap" data-cat="cachorro">
+              Cachorros
+            </button>
+<button class="category-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-surface text-on-surface border border-surface-container-high hover:bg-surface-container whitespace-nowrap" data-cat="gato">
+              Gatos
+            </button>
+<button class="category-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-surface text-on-surface border border-surface-container-high hover:bg-surface-container whitespace-nowrap" data-cat="promocoes">
+              Promoções
+            </button>
+</div>
+</div>
+<!-- Product Grid Bento-Style 2 Cols -->
+<div class="px-screen-gutter py-space-md">
+<div class="grid grid-cols-2 gap-card-gap" id="productGrid">
+<!-- Rendered by JS -->
+</div>
+</div>
+</section>
+<!-- ================= 2. VIEW: PEDIDOS / HISTÓRICO ================= -->
+<section class="hidden px-screen-gutter py-space-md" id="viewPedidos">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-2">Meus Pedidos</h2>
+<div class="space-y-3" id="ordersList">
+<div class="bg-surface p-6 rounded-xl border border-surface-container-high text-center">
+<span class="material-symbols-outlined text-5xl text-outline-variant mb-2">receipt_long</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Nenhum pedido finalizado ainda</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Experimente nossos petiscos frescos para seu pet!</p>
+<button class="mt-4 px-6 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold active:scale-95 transition-all" onclick="navigateTo('Cardápio')">Ver Cardápio</button>
+</div>
+</div>
+</section>
+<!-- ================= 3. STEP: CHECKOUT ETAPA 2 (DADOS & GEOLOCALIZAÇÃO) ================= -->
+<section class="hidden px-screen-gutter py-space-md" id="viewCheckoutStep2">
+<div class="flex items-center gap-2 mb-4">
+<button class="p-1 rounded-full hover:bg-surface-container active:scale-90 transition-transform" onclick="openCartDrawer()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Etapa 2 de 4</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Cadastro &amp; Localização</h2>
+</div>
+</div>
+<form class="space-y-4" id="deliveryForm" onsubmit="event.preventDefault(); validateStep2();">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="customerName">Nome Completo *</label>
+<input class="w-full px-3 py-2.5 rounded-xl border border-surface-container-high focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none bg-surface-container-lowest font-body-md text-body-md" id="customerName" placeholder="Ex: Maria Clara Silva" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="customerPhone">WhatsApp *</label>
+<input class="w-full px-3 py-2.5 rounded-xl border border-surface-container-high focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none bg-surface-container-lowest font-body-md text-body-md" id="customerPhone" placeholder="(11) 99999-9999" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="customerEmail">E-mail *</label>
+<input class="w-full px-3 py-2.5 rounded-xl border border-surface-container-high focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none bg-surface-container-lowest font-body-md text-body-md" id="customerEmail" placeholder="seu@email.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="customerAddress">Endereço de Entrega *</label>
+<input class="w-full px-3 py-2.5 rounded-xl border border-surface-container-high focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none bg-surface-container-lowest font-body-md text-body-md" id="customerAddress" placeholder="Rua, Número, Bairro, Apto" required="" type="text"/>
+</div>
+<!-- Geolocation Mandatory Block -->
+<div class="p-4 rounded-xl border-2 border-dashed border-primary-container/40 bg-surface-container-low">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Geolocalização Obrigatória</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Precisamos checar a proximidade com nossa lanchonete para garantir petiscos frescos.
+                </p>
+<div class="mt-2 text-body-sm font-body-sm hidden" id="geoFeedback"></div>
+<button class="mt-3 w-full py-2.5 px-4 rounded-full bg-surface-container-lowest border border-primary-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary transition-all active:scale-95 shadow-sm" id="btnDetectLocation" onclick="detectUserLocation()" type="button">
+<span class="material-symbols-outlined text-xl">near_me</span>
+<span id="btnDetectText">Detectar Minha Localização</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Business Rule Error Warning Banner -->
+<div class="hidden p-3 rounded-xl bg-error-container text-on-error-container text-body-sm font-body-sm flex items-center gap-2" id="geoBlockNotice">
+<span class="material-symbols-outlined text-error">error</span>
+<span>Localização obrigatória para prosseguir com o pedido.</span>
+</div>
+<button class="w-full py-3.5 rounded-full bg-surface-dim text-on-surface-variant font-headline-sm text-headline-sm font-bold shadow-sm transition-all duration-150 cursor-not-allowed" disabled="" id="btnProceedStep3" type="submit">
+            Prosseguir para Validação de Segurança
+          </button>
+</form>
+</section>
+<!-- ================= 4. STEP: CHECKOUT ETAPA 3 (PROVA DE VIDA / CREDENTIALS) ================= -->
+<section class="hidden px-screen-gutter py-space-md" id="viewCheckoutStep3">
+<div class="flex items-center gap-2 mb-4">
+<button class="p-1 rounded-full hover:bg-surface-container active:scale-90 transition-transform" onclick="goToStep(2)">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Etapa 3 de 4</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Validação do Dispositivo</h2>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-surface-container-high text-center shadow-sm">
+<div class="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 relative animate-pulse">
+<span class="material-symbols-outlined text-5xl">fingerprint</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Prova de Segurança Ativa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xs mx-auto">
+            Garantimos uma compra 100% segura usando as credenciais biométricas ou chave de segurança do seu próprio aparelho.
+          </p>
+<div class="my-6 p-3 rounded-xl bg-surface-container-low text-left space-y-1">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-base">verified_user</span>
+<span>Proteção contra compras indevidas</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-base">lock</span>
+<span>Criptografia ponta a ponta</span>
+</div>
+</div>
+<div class="hidden mb-4 p-3 rounded-lg font-body-sm text-body-sm" id="credentialStatusMessage"></div>
+<button class="w-full py-3.5 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-md" id="btnAuthenticateBiometrics" onclick="authenticateCredentials()">
+<span class="material-symbols-outlined">fingerprint</span>
+            Autenticar com Biometria / PIN
+          </button>
+</div>
+</section>
+<!-- ================= 5. STEP: CHECKOUT ETAPA 4 (PAGAMENTO & SUCESSO) ================= -->
+<section class="hidden px-screen-gutter py-space-md" id="viewCheckoutStep4">
+<div class="flex items-center gap-2 mb-4">
+<button class="p-1 rounded-full hover:bg-surface-container active:scale-90 transition-transform" onclick="goToStep(3)">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Etapa 4 de 4</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Pagamento Simulado</h2>
+</div>
+</div>
+<!-- Payment Method Tabs -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high space-y-4">
+<div class="grid grid-cols-2 gap-2 p-1 bg-surface-container rounded-lg">
+<button class="py-2 rounded-md font-label-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center justify-center gap-1" id="tabPix" onclick="switchPaymentMethod('pix')">
+<span class="material-symbols-outlined text-base">qr_code_2</span>
+              PIX Instantâneo
+            </button>
+<button class="py-2 rounded-md font-label-md text-label-md font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1" id="tabCard" onclick="switchPaymentMethod('card')">
+<span class="material-symbols-outlined text-base">credit_card</span>
+              Cartão de Crédito
+            </button>
+</div>
+<!-- PIX Box -->
+<div class="text-center py-2 space-y-3" id="paymentPixBox">
+<div class="inline-block p-3 bg-surface-container-lowest rounded-xl border-2 border-dashed border-primary-container">
+<!-- Simulated QR Code SVG pattern -->
+<div class="w-44 h-44 mx-auto bg-surface-container flex flex-col items-center justify-center p-2 rounded-lg text-on-surface relative">
+<span class="material-symbols-outlined text-7xl text-primary mb-1">qr_code_2</span>
+<span class="font-label-sm text-label-sm font-mono text-xs">PIX-PETISCOS-PETS-0921</span>
+<span class="font-label-sm text-label-sm text-secondary-container bg-inverse-surface px-2 py-0.5 rounded mt-1">Escaneie no seu app bancário</span>
+</div>
+</div>
+<div class="text-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Código Copia e Cola:</span>
+<div class="flex items-center gap-2 mt-1">
+<input class="w-full text-xs font-mono p-2 bg-surface-container rounded-lg border border-surface-container-high select-all" readonly="" value="00020126580014br.gov.bcb.pix0136petiscospets@pix.com5204000053039865802BR"/>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-dim transition-colors" onclick="copyPixCode()" title="Copiar">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Box -->
+<div class="hidden space-y-3" id="paymentCardBox">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Número do Cartão (Simulado)</label>
+<input class="w-full p-2.5 text-sm bg-surface-container rounded-lg border border-surface-container-high font-mono" placeholder="4242 •••• •••• 4242" type="text" value="4242 8888 9999 4242"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Validade</label>
+<input class="w-full p-2.5 text-sm bg-surface-container rounded-lg border border-surface-container-high font-mono" placeholder="12/28" type="text" value="12/28"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">CVV</label>
+<input class="w-full p-2.5 text-sm bg-surface-container rounded-lg border border-surface-container-high font-mono" placeholder="123" type="password" value="789"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Nome Impresso</label>
+<input class="w-full p-2.5 text-sm bg-surface-container rounded-lg border border-surface-container-high font-mono uppercase" placeholder="Nome no Cartão" type="text" value="CLIENTE PET AMIGO"/>
+</div>
+</div>
+<!-- Summary values -->
+<div class="border-t border-surface-container pt-3 space-y-1 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal:</span>
+<span id="step4Subtotal">R$ 0,00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Entrega Expressa:</span>
+<span class="text-secondary font-bold">Grátis</span>
+</div>
+<div class="flex justify-between text-on-surface font-headline-sm text-headline-sm font-bold pt-1">
+<span>Total a pagar:</span>
+<span class="text-primary" id="step4Total">R$ 0,00</span>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-md" onclick="confirmPaymentAndCompleteOrder()">
+<span class="material-symbols-outlined">check_circle</span>
+            Confirmar Pagamento Simulado
+          </button>
+</div>
+</section>
+<!-- ================= 6. VIEW: SUCESSO DO PEDIDO ================= -->
+<section class="hidden px-screen-gutter py-space-md text-center" id="viewOrderSuccess">
+<div class="w-20 h-20 rounded-full bg-secondary-container/40 text-primary flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined fill-icon text-5xl">check_circle</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full font-bold">Pedido Confirmado!</span>
+<h2 class="font-headline-xl text-headline-xl font-bold text-on-surface mt-2">Uau! A comidinha está a caminho!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Seu pet agradece. O pedido foi registrado com sucesso em nossa cozinha artesanal.
+        </p>
+<div class="bg-surface p-4 rounded-xl border border-surface-container-high my-6 text-left space-y-2">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Número do Pedido:</span>
+<span class="font-mono font-bold text-primary" id="successOrderId">#PET-9281</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Previsão de Entrega:</span>
+<span class="font-bold text-on-surface">30 a 45 min</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md border-t border-surface-container pt-2">
+<span class="text-on-surface-variant">Total Pago:</span>
+<span class="font-bold text-primary" id="successOrderTotal">R$ 0,00</span>
+</div>
+</div>
+<div class="space-y-2">
+<a class="w-full py-3.5 rounded-full bg-secondary-container text-on-secondary-fixed font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-sm" href="#" id="successWhatsAppBtn" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+            Acompanhar pelo WhatsApp
+          </a>
+<button class="w-full py-3 rounded-full bg-surface text-on-surface font-label-md text-label-md font-bold border border-surface-container-high hover:bg-surface-container transition-colors" onclick="resetAppToHome()">
+            Voltar ao Cardápio
+          </button>
+</div>
+</section>
+</main>
+<!-- Floating Sticky Cart Bar (Always handy on Main Menu) -->
+<div class="fixed bottom-16 left-0 right-0 z-30 max-w-[480px] mx-auto px-screen-gutter pointer-events-none transition-all duration-300 transform translate-y-24 opacity-0" id="floatingCartBar">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-full p-2.5 px-4 shadow-xl flex items-center justify-between pointer-events-auto backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary font-label-sm text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold" id="floatingCartBadge">0</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80 block">Ver carrinho</span>
+<span class="font-price-tag text-price-tag text-secondary-fixed" id="floatingCartTotal">R$ 0,00</span>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary px-5 py-2 rounded-full font-label-md text-label-md font-bold flex items-center gap-1 active:scale-95 transition-transform shadow" onclick="openCartDrawer()">
+<span>Avançar</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar (Shared Component Execution) -->
+<!-- PROHIBIT all top/bottom border lines. Separation via subtle shadow. -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-space-xs py-space-xs max-w-[480px] mx-auto w-full pb-safe bg-surface-container-lowest shadow-[0_-4px_24px_rgba(0,0,0,0.06)]" id="globalBottomNav">
+<!-- Item 1: Cardápio (Active) -->
+<button class="nav-item flex flex-col items-center justify-center text-primary font-bold hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3" data-nav-label="Cardápio" onclick="navigateTo('Cardápio')">
+<span class="material-symbols-outlined text-2xl fill-icon">restaurant_menu</span>
+<span class="text-label-sm font-label-sm">Cardápio</span>
+</button>
+<!-- Item 2: Promoções -->
+<button class="nav-item flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3" data-nav-label="Promoções" onclick="navigateTo('Promoções')">
+<span class="material-symbols-outlined text-2xl">local_offer</span>
+<span class="text-label-sm font-label-sm">Promoções</span>
+</button>
+<!-- Item 3: Pedidos -->
+<button class="nav-item flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3" data-nav-label="Pedidos" onclick="navigateTo('Pedidos')">
+<span class="material-symbols-outlined text-2xl">receipt_long</span>
+<span class="text-label-sm font-label-sm">Pedidos</span>
+</button>
+<!-- Item 4: Carrinho -->
+<button class="nav-item flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3 relative" data-nav-label="Carrinho" onclick="openCartDrawer()">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+<span class="text-label-sm font-label-sm">Carrinho</span>
+</button>
+</nav>
+<!-- ================= MODAL / BOTTOM SHEET: CARRINHO ================= -->
+<div class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs" id="cartDrawerBackdrop" onclick="closeCartDrawer()"></div>
+<aside class="fixed bottom-0 left-0 right-0 z-50 max-w-[480px] mx-auto bg-surface-container-lowest rounded-t-3xl shadow-2xl transform translate-y-full transition-transform duration-300 ease-out max-h-[85vh] flex flex-col" id="cartDrawer">
+<!-- Handle -->
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full mx-auto mt-3 mb-2 cursor-pointer" onclick="closeCartDrawer()"></div>
+<div class="flex items-center justify-between px-screen-gutter py-space-xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Minha Sacola Pet</h3>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container" onclick="closeCartDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Items List -->
+<div class="flex-1 overflow-y-auto px-screen-gutter py-space-sm space-y-3" id="cartItemsList">
+<!-- Injected by JS -->
+</div>
+<!-- Cart Drawer Footer -->
+<div class="p-screen-gutter border-t border-surface-container-high bg-surface space-y-3">
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal:</span>
+<span id="cartDrawerSubtotal">R$ 0,00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Taxa de Entrega:</span>
+<span class="text-secondary font-bold">Grátis (Promoção)</span>
+</div>
+<div class="flex justify-between text-on-surface font-headline-sm text-headline-sm font-bold pt-1 border-t border-surface-container">
+<span>Total:</span>
+<span class="text-primary" id="cartDrawerTotal">R$ 0,00</span>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-md" id="btnProceedToCheckout" onclick="proceedToCheckoutStep2()">
+<span>Finalizar Pedido</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- Toast Notification Popup -->
+<div class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 shadow-lg transform -translate-y-10 opacity-0 transition-all pointer-events-none" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span id="toastMessage">Item adicionado!</span>
+</div>
+</div>
+<!-- APPLICATION LOGIC & STATE (PURE JS) -->
+<script>
+    /* 1. DATA STORE INITIALIZATION (Exact items requested) */
+    const STORE_DATA = {
+      name: "Petiscos de Pets",
+      hours: "Ter a Dom, 10h às 22h",
+      whatsapp: "5511999999999",
+      categories: ["todos", "cachorro", "gato", "promocoes"],
+      products: [
+        {
+          id: "p1",
+          name: "Biscoito de Ossinho",
+          category: "cachorro",
+          price: 18.90,
+          description: "Crocante, sabor carne com vegetais frescos e aveia integral.",
+          badge: null,
+          isPromotion: false,
+          available: true,
+          icon: "cookie"
+        },
+        {
+          id: "p2",
+          name: "Kit Mordedor",
+          category: "cachorro",
+          price: 39.80,
+          description: "100% natural, desidratado lentamente. Auxilia na saúde bucal.",
+          badge: "Pague 2 Leve 3",
+          badgeColor: "bg-secondary-container text-on-secondary-fixed",
+          isPromotion: true,
+          available: true,
+          icon: "pets"
+        },
+        {
+          id: "p3",
+          name: "Petisco de Salmão",
+          category: "gato",
+          price: 14.50,
+          description: "Rico em Ômega 3, pedacinhos macios e suculentos para felinos.",
+          badge: null,
+          isPromotion: false,
+          available: true,
+          icon: "set_meal"
+        },
+        {
+          id: "p4",
+          name: "Kit Erva de Gato",
+          category: "gato",
+          price: 29.70,
+          description: "Catnip orgânico cultivado com sachês crocantes recheados.",
+          badge: "Pague 2 Leve 3",
+          badgeColor: "bg-secondary-container text-on-secondary-fixed",
+          isPromotion: true,
+          available: true,
+          icon: "eco"
+        },
+        {
+          id: "p5",
+          name: "Filé de Frango Desidratado",
+          category: "cachorro",
+          price: 22.00,
+          description: "Tiras puras de peito de frango, zero conservantes ou corantes.",
+          badge: "20% OFF",
+          badgeColor: "bg-tertiary text-on-tertiary",
+          isPromotion: true,
+          available: true,
+          icon: "restaurant"
+        },
+        {
+          id: "p6",
+          name: "Patê de Atum",
+          category: "gato",
+          price: 12.90,
+          description: "Receita úmida artesanal premium para hidratação felina.",
+          badge: null,
+          isPromotion: false,
+          available: false, // Esgotado
+          icon: "dinner_dining"
+        }
+      ]
+    };
+
+    /* 2. STATE MANAGEMENT */
+    let cart = JSON.parse(localStorage.getItem('petiscos_cart')) || {};
+    let orderHistory = JSON.parse(localStorage.getItem('petiscos_orders')) || [];
+    let selectedCategory = "todos";
+    let userLocationObtained = false;
+    let userCoords = null;
+    let currentActiveNav = "Cardápio";
+
+    /* Format Currency Helper */
+    function formatBRL(val) {
+      return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    /* Save Cart */
+    function saveCart() {
+      localStorage.setItem('petiscos_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    /* Show Toast */
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastMessage');
+      text.textContent = msg;
+      toast.classList.remove('opacity-0', '-translate-y-10');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-10');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2000);
+    }
+
+    /* 3. PRODUCT RENDERING */
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+
+      const filtered = STORE_DATA.products.filter(p => {
+        if (selectedCategory === "todos") return true;
+        if (selectedCategory === "promocoes") return p.isPromotion;
+        return p.category === selectedCategory;
+      });
+
+      filtered.forEach(product => {
+        const qtyInCart = cart[product.id] ? cart[product.id].quantity : 0;
+        const card = document.createElement('div');
+        card.className = "bg-surface-container-lowest rounded-2xl p-3 border border-surface-container-high shadow-sm flex flex-col justify-between relative transition-all duration-150 hover:shadow-md";
+
+        // Badge if present
+        let badgeHtml = '';
+        if (product.badge) {
+          badgeHtml = `<span class="absolute top-2 left-2 ${product.badgeColor} font-label-sm text-label-sm font-bold px-2 py-0.5 rounded-full z-10 uppercase tracking-tight shadow-sm">${product.badge}</span>`;
+        }
+
+        // Action button or Stepper
+        let actionBtnHtml = '';
+        if (!product.available) {
+          actionBtnHtml = `<span class="font-label-sm text-label-sm text-error bg-error-container px-2 py-1 rounded-full font-bold">Esgotado</span>`;
+        } else if (qtyInCart > 0) {
+          actionBtnHtml = `
+            <div class="flex items-center bg-surface-container rounded-full p-0.5 shadow-inner">
+              <button onclick="changeQuantity('${product.id}', -1)" class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim active:scale-90 transition-all">
+                <span class="material-symbols-outlined text-sm">remove</span>
+              </button>
+              <span class="px-2 font-headline-sm text-headline-sm font-bold text-primary min-w-[20px] text-center">${qtyInCart}</span>
+              <button onclick="changeQuantity('${product.id}', 1)" class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold hover:opacity-90 active:scale-90 transition-all">
+                <span class="material-symbols-outlined text-sm">add</span>
+              </button>
+            </div>
+          `;
+        } else {
+          actionBtnHtml = `
+            <button onclick="addToCart('${product.id}')" class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-sm" aria-label="Adicionar ${product.name}">
+              <span class="material-symbols-outlined text-lg">add</span>
+            </button>
+          `;
+        }
+
+        card.innerHTML = `
+          <div>
+            <div class="relative h-28 w-full bg-surface-container-low rounded-xl mb-2 flex items-center justify-center overflow-hidden">
+              ${badgeHtml}
+              <div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center text-primary-container shadow-inner">
+                <span class="material-symbols-outlined text-4xl">${product.icon}</span>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] uppercase font-bold text-primary tracking-wider">${product.category === 'cachorro' ? 'Cães' : 'Gatos'}</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface line-clamp-1 leading-snug">${product.name}</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 text-xs leading-relaxed">${product.description}</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container">
+            <div>
+              <span class="font-price-tag text-price-tag font-bold text-primary block leading-none">${formatBRL(product.price)}</span>
+            </div>
+            <div>
+              ${actionBtnHtml}
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    /* 4. CART OPERATIONS */
+    function addToCart(productId) {
+      const product = STORE_DATA.products.find(p => p.id === productId);
+      if (!product || !product.available) return;
+
+      if (!cart[productId]) {
+        cart[productId] = {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity: 1,
+          icon: product.icon
+        };
+      } else {
+        cart[productId].quantity += 1;
+      }
+
+      saveCart();
+      renderProducts();
+      showToast(`1x ${product.name} adicionado!`);
+    }
+
+    function changeQuantity(productId, delta) {
+      if (!cart[productId]) return;
+
+      cart[productId].quantity += delta;
+      if (cart[productId].quantity <= 0) {
+        delete cart[productId];
+        showToast('Item removido da sacola');
+      }
+      saveCart();
+      renderProducts();
+      renderCartDrawerItems();
+    }
+
+    function updateCartUI() {
+      const items = Object.values(cart);
+      const totalCount = items.reduce((acc, curr) => acc + curr.quantity, 0);
+      const totalPrice = items.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
+
+      // Header Badge
+      const headerBadge = document.getElementById('cartCountBadge');
+      if (totalCount > 0) {
+        headerBadge.textContent = totalCount;
+        headerBadge.classList.remove('scale-0');
+        headerBadge.classList.add('scale-100');
+      } else {
+        headerBadge.classList.remove('scale-100');
+        headerBadge.classList.add('scale-0');
+      }
+
+      // Floating Cart Bar (Shown only in Cardápio view if items > 0)
+      const floatingBar = document.getElementById('floatingCartBar');
+      const viewCardapio = document.getElementById('viewCardapio');
+      if (totalCount > 0 && !viewCardapio.classList.contains('hidden')) {
+        document.getElementById('floatingCartBadge').textContent = totalCount;
+        document.getElementById('floatingCartTotal').textContent = formatBRL(totalPrice);
+        floatingBar.classList.remove('translate-y-24', 'opacity-0');
+        floatingBar.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        floatingBar.classList.remove('translate-y-0', 'opacity-100');
+        floatingBar.classList.add('translate-y-24', 'opacity-0');
+      }
+
+      // Drawer totals
+      document.getElementById('cartDrawerSubtotal').textContent = formatBRL(totalPrice);
+      document.getElementById('cartDrawerTotal').textContent = formatBRL(totalPrice);
+
+      // Step 4 totals
+      const s4Sub = document.getElementById('step4Subtotal');
+      const s4Tot = document.getElementById('step4Total');
+      if (s4Sub && s4Tot) {
+        s4Sub.textContent = formatBRL(totalPrice);
+        s4Tot.textContent = formatBRL(totalPrice);
+      }
+
+      // Enable/Disable Checkout button
+      const btnCheckout = document.getElementById('btnProceedToCheckout');
+      if (btnCheckout) {
+        btnCheckout.disabled = totalCount === 0;
+        if (totalCount === 0) {
+          btnCheckout.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+          btnCheckout.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+      }
+    }
+
+    /* 5. DRAWER DRAWER OPERATIONS */
+    function openCartDrawer() {
+      hideCheckoutViews();
+      renderCartDrawerItems();
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      const drawer = document.getElementById('cartDrawer');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      drawer.classList.remove('translate-y-full');
+      drawer.classList.add('translate-y-0');
+    }
+
+    function closeCartDrawer() {
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      const drawer = document.getElementById('cartDrawer');
+      backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('translate-y-0');
+      drawer.classList.add('translate-y-full');
+    }
+
+    function renderCartDrawerItems() {
+      const list = document.getElementById('cartItemsList');
+      list.innerHTML = '';
+      const items = Object.values(cart);
+
+      if (items.length === 0) {
+        list.innerHTML = `
+          <div class="py-12 text-center text-on-surface-variant">
+            <span class="material-symbols-outlined text-6xl text-surface-dim">shopping_cart</span>
+            <p class="font-headline-sm text-headline-sm text-on-surface mt-2">Sua sacola está vazia</p>
+            <p class="font-body-sm text-body-sm">Escolha petiscos deliciosos para o seu pet!</p>
+          </div>
+        `;
+        return;
+      }
+
+      items.forEach(item => {
+        const itemRow = document.createElement('div');
+        itemRow.className = "flex items-center justify-between p-2.5 bg-surface rounded-xl border border-surface-container";
+        itemRow.innerHTML = `
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">${item.icon}</span>
+            </div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">${item.name}</h4>
+              <span class="font-body-sm text-body-sm text-primary font-semibold">${formatBRL(item.price)} cada</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center bg-surface-container rounded-full p-0.5">
+              <button onclick="changeQuantity('${item.id}', -1)" class="w-6 h-6 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim active:scale-90">
+                <span class="material-symbols-outlined text-xs">remove</span>
+              </button>
+              <span class="px-2 font-headline-sm text-headline-sm font-bold text-primary min-w-[18px] text-center">${item.quantity}</span>
+              <button onclick="changeQuantity('${item.id}', 1)" class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold active:scale-90">
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </div>
+        `;
+        list.appendChild(itemRow);
+      });
+    }
+
+    /* 6. SPA VIEW ROUTING & SHELL VISIBILITY */
+    function setNavState(activeLabel) {
+      currentActiveNav = activeLabel;
+      const navButtons = document.querySelectorAll('.nav-item');
+      navButtons.forEach(btn => {
+        const label = btn.getAttribute('data-nav-label');
+        const iconSpan = btn.querySelector('.material-symbols-outlined');
+        if (label === activeLabel) {
+          btn.className = "nav-item flex flex-col items-center justify-center text-primary font-bold hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3";
+          if (iconSpan) iconSpan.classList.add('fill-icon');
+        } else {
+          btn.className = "nav-item flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95 py-1 px-3";
+          if (iconSpan) iconSpan.classList.remove('fill-icon');
+        }
+      });
+    }
+
+    function hideAllViews() {
+      document.getElementById('viewCardapio').classList.add('hidden');
+      document.getElementById('viewPedidos').classList.add('hidden');
+      hideCheckoutViews();
+    }
+
+    function hideCheckoutViews() {
+      document.getElementById('viewCheckoutStep2').classList.add('hidden');
+      document.getElementById('viewCheckoutStep3').classList.add('hidden');
+      document.getElementById('viewCheckoutStep4').classList.add('hidden');
+      document.getElementById('viewOrderSuccess').classList.add('hidden');
+    }
+
+    function navigateTo(destination) {
+      closeCartDrawer();
+      hideAllViews();
+
+      // Ensure BottomNavBar is visible on top-level
+      const bottomNav = document.getElementById('globalBottomNav');
+      bottomNav.classList.remove('hidden');
+
+      if (destination === 'Cardápio') {
+        document.getElementById('viewCardapio').classList.remove('hidden');
+        selectedCategory = "todos";
+        updateCategoryChips();
+        renderProducts();
+        setNavState('Cardápio');
+      } else if (destination === 'Promoções') {
+        document.getElementById('viewCardapio').classList.remove('hidden');
+        selectedCategory = "promocoes";
+        updateCategoryChips();
+        renderProducts();
+        setNavState('Promoções');
+      } else if (destination === 'Pedidos') {
+        document.getElementById('viewPedidos').classList.remove('hidden');
+        renderOrderHistory();
+        setNavState('Pedidos');
+      }
+      updateCartUI();
+    }
+
+    function updateCategoryChips() {
+      const chips = document.querySelectorAll('.category-chip');
+      chips.forEach(chip => {
+        if (chip.getAttribute('data-cat') === selectedCategory) {
+          chip.className = "category-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-primary-container text-on-primary shadow-sm whitespace-nowrap";
+        } else {
+          chip.className = "category-chip px-4 py-1.5 rounded-full font-label-md text-label-md font-bold transition-all duration-150 bg-surface text-on-surface border border-surface-container-high hover:bg-surface-container whitespace-nowrap";
+        }
+      });
+    }
+
+    /* 7. CHECKOUT FLOW (Steps 2, 3, 4, Success) */
+    function proceedToCheckoutStep2() {
+      const totalCount = Object.values(cart).reduce((acc, curr) => acc + curr.quantity, 0);
+      if (totalCount === 0) return;
+
+      closeCartDrawer();
+      hideAllViews();
+
+      // Semantic Shell Rule: Suppress BottomNavBar during linear checkout
+      document.getElementById('globalBottomNav').classList.add('hidden');
+      document.getElementById('viewCheckoutStep2').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToStep(stepNumber) {
+      hideCheckoutViews();
+      if (stepNumber === 2) {
+        document.getElementById('viewCheckoutStep2').classList.remove('hidden');
+      } else if (stepNumber === 3) {
+        document.getElementById('viewCheckoutStep3').classList.remove('hidden');
+      } else if (stepNumber === 4) {
+        document.getElementById('viewCheckoutStep4').classList.remove('hidden');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* GEOLOCATION HANDLER (Etapa 2 Obrigatória) */
+    function detectUserLocation() {
+      const geoFeedback = document.getElementById('geoFeedback');
+      const btnDetect = document.getElementById('btnDetectLocation');
+      const btnDetectText = document.getElementById('btnDetectText');
+      const geoBlockNotice = document.getElementById('geoBlockNotice');
+      const btnProceed = document.getElementById('btnProceedStep2');
+
+      geoFeedback.classList.remove('hidden', 'text-error', 'text-secondary-fixed-variant');
+      geoFeedback.textContent = "Obtendo permissão e satélites...";
+      btnDetectText.textContent = "Localizando...";
+
+      if (!navigator.geolocation) {
+        geoFeedback.classList.add('text-error');
+        geoFeedback.textContent = "Geolocalização não é suportada pelo seu navegador.";
+        geoBlockNotice.classList.remove('hidden');
+        userLocationObtained = false;
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          userCoords = {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude
+          };
+          userLocationObtained = true;
+
+          geoFeedback.classList.remove('text-error');
+          geoFeedback.classList.add('text-primary');
+          geoFeedback.innerHTML = `
+            <div class="flex items-center gap-1 font-bold">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+              <span>Localização Validada: ${userCoords.lat.toFixed(4)}, ${userCoords.lon.toFixed(4)}</span>
+            </div>
+            <span class="text-xs text-on-surface-variant block">Distância de 2.4 km da nossa cozinha (Entregamos aí!)</span>
+          `;
+
+          geoBlockNotice.classList.add('hidden');
+          btnDetectText.textContent = "Localização Confirmada";
+          btnDetect.classList.add('bg-secondary-container/20', 'border-secondary-container');
+
+          // Release Next Step Button
+          btnProceed.disabled = false;
+          btnProceed.className = "w-full py-3.5 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold shadow-md hover:bg-primary transition-all duration-150 active:scale-98 cursor-pointer";
+        },
+        (error) => {
+          userLocationObtained = false;
+          geoFeedback.classList.add('text-error');
+          geoFeedback.textContent = "Permissão negada ou sinal de GPS indisponível.";
+          geoBlockNotice.classList.remove('hidden');
+          btnDetectText.textContent = "Tentar Novamente";
+
+          btnProceed.disabled = true;
+          btnProceed.className = "w-full py-3.5 rounded-full bg-surface-dim text-on-surface-variant font-headline-sm text-headline-sm font-bold shadow-sm cursor-not-allowed";
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    }
+
+    function validateStep2() {
+      const geoBlockNotice = document.getElementById('geoBlockNotice');
+      if (!userLocationObtained) {
+        geoBlockNotice.classList.remove('hidden');
+        showToast('Localização obrigatória para prosseguir!');
+        return;
+      }
+      goToStep(3);
+    }
+
+    /* CREDENTIALS / BIOMETRICS (Etapa 3) */
+    async function authenticateCredentials() {
+      const statusMsg = document.getElementById('credentialStatusMessage');
+      const authBtn = document.getElementById('btnAuthenticateBiometrics');
+
+      authBtn.disabled = true;
+      authBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-lg">sync</span> Validando chave segura...`;
+
+      statusMsg.classList.remove('hidden', 'bg-error-container', 'text-on-error-container', 'bg-secondary-container/40', 'text-on-secondary-fixed');
+
+      try {
+        // Attempt navigator.credentials check / WebAuthn simulation
+        if (window.PublicKeyCredential && navigator.credentials) {
+          // Soft simulation invocation with fallback guarantee
+          await new Promise(resolve => setTimeout(resolve, 900));
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 800));
+        }
+
+        statusMsg.classList.add('bg-secondary-container/40', 'text-on-secondary-fixed');
+        statusMsg.innerHTML = `<span class="font-bold flex items-center justify-center gap-1"><span class="material-symbols-outlined text-sm">verified</span> Dispositivo Autenticado com Sucesso!</span>`;
+
+        setTimeout(() => {
+          goToStep(4);
+        }, 700);
+
+      } catch (err) {
+        statusMsg.classList.add('bg-error-container', 'text-on-error-container');
+        statusMsg.textContent = "Não foi possível validar as credenciais. Prosseguindo em modo de segurança alternativo.";
+        setTimeout(() => {
+          goToStep(4);
+        }, 1200);
+      } finally {
+        authBtn.disabled = false;
+        authBtn.innerHTML = `<span class="material-symbols-outlined">fingerprint</span> Autenticar com Biometria / PIN`;
+      }
+    }
+
+    /* STEP 4: PAYMENT SELECTION */
+    function switchPaymentMethod(type) {
+      const tabPix = document.getElementById('tabPix');
+      const tabCard = document.getElementById('tabCard');
+      const boxPix = document.getElementById('paymentPixBox');
+      const boxCard = document.getElementById('paymentCardBox');
+
+      if (type === 'pix') {
+        tabPix.className = "py-2 rounded-md font-label-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center justify-center gap-1";
+        tabCard.className = "py-2 rounded-md font-label-md text-label-md font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1";
+        boxPix.classList.remove('hidden');
+        boxCard.classList.add('hidden');
+      } else {
+        tabCard.className = "py-2 rounded-md font-label-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center justify-center gap-1";
+        tabPix.className = "py-2 rounded-md font-label-md text-label-md font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1";
+        boxCard.classList.remove('hidden');
+        boxPix.classList.add('hidden');
+      }
+    }
+
+    function copyPixCode() {
+      navigator.clipboard.writeText("00020126580014br.gov.bcb.pix0136petiscospets@pix.com5204000053039865802BR");
+      showToast("Código PIX copiado com sucesso!");
+    }
+
+    function confirmPaymentAndCompleteOrder() {
+      const items = Object.values(cart);
+      const totalPrice = items.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
+      const orderId = '#PET-' + Math.floor(1000 + Math.random() * 9000);
+
+      const customerName = document.getElementById('customerName').value || 'Cliente Pet';
+      const customerAddress = document.getElementById('customerAddress').value || 'Endereço Registrado';
+
+      const newOrder = {
+        id: orderId,
+        date: new Date().toLocaleDateString('pt-BR') + ' às ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+        items: items,
+        total: totalPrice,
+        address: customerAddress
+      };
+
+      orderHistory.unshift(newOrder);
+      localStorage.setItem('petiscos_orders', JSON.stringify(orderHistory));
+
+      // Build WhatsApp share message
+      const waText = encodeURIComponent(`Olá Petiscos de Pets! Acabei de fazer o pedido ${orderId} no valor de ${formatBRL(totalPrice)} para entrega em: ${customerAddress}. Gostaria de acompanhar o preparo!`);
+      const waUrl = `https://wa.me/5511999999999?text=${waText}`;
+      document.getElementById('successWhatsAppBtn').href = waUrl;
+
+      // Update success view
+      document.getElementById('successOrderId').textContent = orderId;
+      document.getElementById('successOrderTotal').textContent = formatBRL(totalPrice);
+
+      // Clear cart
+      cart = {};
+      saveCart();
+
+      // Show success step
+      hideCheckoutViews();
+      document.getElementById('viewOrderSuccess').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetAppToHome() {
+      navigateTo('Cardápio');
+    }
+
+    function renderOrderHistory() {
+      const container = document.getElementById('ordersList');
+      container.innerHTML = '';
+
+      if (!orderHistory || orderHistory.length === 0) {
+        container.innerHTML = `
+          <div class="bg-surface p-6 rounded-xl border border-surface-container-high text-center">
+            <span class="material-symbols-outlined text-5xl text-outline-variant mb-2">receipt_long</span>
+            <p class="font-headline-sm text-headline-sm text-on-surface">Nenhum pedido finalizado ainda</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Experimente nossos petiscos frescos para seu pet!</p>
+            <button onclick="navigateTo('Cardápio')" class="mt-4 px-6 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold active:scale-95 transition-all">Ver Cardápio</button>
+          </div>
+        `;
+        return;
+      }
+
+      orderHistory.forEach(order => {
+        const itemCard = document.createElement('div');
+        itemCard.className = "bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm space-y-2";
+        const itemsSummary = order.items.map(i => `${i.quantity}x ${i.name}`).join(', ');
+
+        itemCard.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-headline-sm text-headline-sm font-bold text-primary font-mono">${order.id}</span>
+            <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold">Concluído</span>
+          </div>
+          <div class="font-body-sm text-body-sm text-on-surface-variant">
+            <p class="line-clamp-2 text-on-surface"><strong>Itens:</strong> ${itemsSummary}</p>
+            <p class="text-xs mt-1"><strong>Data:</strong> ${order.date}</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-surface-container font-price-tag text-price-tag font-bold">
+            <span class="text-sm font-normal text-on-surface-variant">Total Pago:</span>
+            <span class="text-primary">${formatBRL(order.total)}</span>
+          </div>
+        `;
+        container.appendChild(itemCard);
+      });
+    }
+
+    /* 8. EVENT LISTENERS SETUP */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Setup header cart button
+      document.getElementById('headerCartBtn').addEventListener('click', () => {
+        openCartDrawer();
+      });
+
+      // Setup category filter clicks
+      const categoryChips = document.querySelectorAll('.category-chip');
+      categoryChips.forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          selectedCategory = chip.getAttribute('data-cat');
+          updateCategoryChips();
+          renderProducts();
+        });
+      });
+
+      // Initial Render
+      renderProducts();
+      updateCartUI();
+    });
+  </script>
+</body></html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finalizar Pedido - Petiscos de Pets</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#e8e8e8",
+            "secondary-fixed-dim": "#d4cb00",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-dim": "#dadada",
+            "inverse-surface": "#303030",
+            "outline-variant": "#dcc1b3",
+            "surface": "#f9f9f9",
+            "on-background": "#1b1b1b",
+            "primary-fixed-dim": "#ffb68b",
+            "on-secondary-fixed": "#1e1c00",
+            "primary": "#944400",
+            "on-secondary-fixed-variant": "#4c4800",
+            "on-secondary": "#ffffff",
+            "background": "#f9f9f9",
+            "inverse-on-surface": "#f1f1f1",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#b85809",
+            "surface-container-highest": "#e2e2e2",
+            "on-surface": "#1b1b1b",
+            "on-tertiary-fixed": "#00026c",
+            "on-primary-fixed-variant": "#753400",
+            "inverse-primary": "#ffb68b",
+            "surface-container-low": "#f3f3f3",
+            "on-tertiary-fixed-variant": "#000beb",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-container": "#eeeeee",
+            "surface-tint": "#994700",
+            "on-secondary-container": "#6a6500",
+            "tertiary-fixed-dim": "#bec2ff",
+            "on-tertiary-container": "#fdf9ff",
+            "on-surface-variant": "#564338",
+            "on-primary-container": "#fff9f8",
+            "secondary-fixed": "#f2e71c",
+            "surface-variant": "#e2e2e2",
+            "primary-fixed": "#ffdbc8",
+            "secondary-container": "#efe517",
+            "surface-bright": "#f9f9f9",
+            "outline": "#897266",
+            "on-primary-fixed": "#321200",
+            "error": "#ba1a1a",
+            "tertiary": "#2b36ff",
+            "tertiary-fixed": "#e0e0ff",
+            "tertiary-container": "#535fff",
+            "secondary": "#656100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-gap": "0.75rem",
+            "space-2xs": "0.25rem",
+            "space-xs": "0.5rem",
+            "screen-gutter": "1rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-md": "1rem",
+            "space-sm": "0.75rem",
+            "sheet-bottom-safe": "5.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Poppins"],
+            "headline-md": ["Poppins"],
+            "body-sm": ["Open Sans"],
+            "headline-sm": ["Poppins"],
+            "headline-lg": ["Poppins"],
+            "body-md": ["Open Sans"],
+            "price-tag": ["Poppins"],
+            "label-sm": ["Open Sans"],
+            "body-lg": ["Open Sans"],
+            "label-md": ["Open Sans"]
+          },
+          "fontSize": {
+            "headline-xl": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "headline-lg": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "price-tag": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.2px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Viewport Container (Max 480px) -->
+<main class="w-full max-w-[480px] min-h-screen bg-surface-container-lowest flex flex-col relative shadow-sm pb-space-2xl">
+<!-- TopAppBar (Docked Full Width) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-screen-gutter py-space-xs bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Voltar" class="flex items-center justify-center p-space-2xs rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<img alt="Logo Petiscos de Pets" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgRDLx0k6jV3TYRK7tn5sbzozE6d4g01E7UvE2aQTqjwT6yUHdQYJck58i3cyH5rkh7mUYaj0gbeoMsnD4w6SJt1y5haWi21MyIoWoWmK_9lo4rJmWXa3tkAByq_iaa5pKWTr17hG1Z1eBRanhykSChsbWRk0mLHY_zQB52C6Kt7IS1PM24A8PiLW3U6puGVUTNpQg-w98-St2Lg78Lbk0sUnoWhXKcvIC07aJbjoVRVVDp99kH5u-zddAAK-0IsmlUg"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Finalizar Pedido</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-none">Petiscos de Pets</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-2xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px] text-tertiary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</header>
+<!-- Main Content Flow -->
+<div class="px-screen-gutter pt-space-md space-y-space-md flex-1">
+<!-- Step 1: Security & Credentials / Device Proof Card -->
+<section aria-label="Segurança e Credenciais" class="bg-surface-container-lowest rounded-xl border border-surface-container p-space-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary"></div>
+<div class="flex items-start justify-between gap-space-sm pl-space-xs">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0 mt-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Validação do Dispositivo Concluída</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Autenticado com sucesso via Credentials Container / Biometria local
+              </p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">check</span>
+            Verificado
+          </span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pl-space-xs">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">lock</span> Chave Criptográfica Ativa
+          </span>
+<span class="text-on-surface-variant">Token #D892-PET</span>
+</div>
+</section>
+<!-- Step 2: Order & Delivery Summary Card -->
+<section aria-label="Resumo do Pedido" class="bg-surface-container-lowest rounded-xl border border-surface-container p-space-md shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+<!-- Delivery info -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Entrega Expressa</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ana Clara • (11) 99888-7766</p>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-primary-container font-bold hover:underline" type="button">Alterar</button>
+</div>
+<!-- Items list (2 items) -->
+<div class="py-space-sm space-y-space-xs border-b border-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center font-bold">1x</span>
+<span class="font-body-md text-body-md text-on-surface">Kit Mordedor Natural Bovino</span>
+</div>
+<span class="font-price-tag text-price-tag text-on-surface">R$ 44,90</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center font-bold">1x</span>
+<span class="font-body-md text-body-md text-on-surface">Petisco Gourmet de Salmão Desidratado</span>
+</div>
+<span class="font-price-tag text-price-tag text-on-surface">R$ 28,90</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span>Taxa de Entrega Segura</span>
+<span class="text-tertiary font-bold">GRÁTIS</span>
+</div>
+</div>
+<!-- Total Price -->
+<div class="pt-space-sm flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total Final</span>
+<span class="font-headline-lg text-headline-lg text-primary-container">R$ 73,80</span>
+</div>
+</section>
+<!-- Step 3: Simulated Payment Gateway -->
+<section aria-label="Gateway de Pagamento Simulado" class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Forma de Pagamento</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">shield</span> Ambiente Criptografado
+          </span>
+</div>
+<!-- Payment Mode Selectors -->
+<div class="grid grid-cols-2 gap-space-xs" role="tablist">
+<!-- PIX Tab (Selected Option) -->
+<button aria-selected="true" class="flex flex-col items-center justify-center p-space-sm rounded-xl border-2 border-primary-container bg-surface-container-lowest text-on-surface relative transition-all duration-150" id="pixTabBtn" onclick="selectPaymentMethod('pix')" role="tab" type="button">
+<span class="material-symbols-outlined text-[24px] text-primary-container mb-1">qr_code_2</span>
+<span class="font-label-md text-label-md font-bold">PIX Instantâneo</span>
+<span class="absolute -top-2 right-2 px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-[10px] font-bold">Aprovação Imediata</span>
+</button>
+<!-- Card Tab -->
+<button aria-selected="false" class="flex flex-col items-center justify-center p-space-sm rounded-xl border border-surface-container bg-surface-container-lowest text-on-surface hover:bg-surface transition-all duration-150" id="cardTabBtn" onclick="selectPaymentMethod('card')" role="tab" type="button">
+<span class="material-symbols-outlined text-[24px] text-on-surface-variant mb-1">credit_card</span>
+<span class="font-label-md text-label-md">Cartão de Crédito</span>
+</button>
+</div>
+<!-- Option A: PIX Panel (Default Active) -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container p-space-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] space-y-space-md" id="pixPanel">
+<div class="flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low border border-surface-container text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">bolt</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Liberação automática do pedido logo após a leitura do QR Code.
+            </p>
+</div>
+<!-- Crisp Simulated QR Code Container -->
+<div class="flex flex-col items-center justify-center py-space-2xs">
+<div class="p-3 bg-surface-container-lowest rounded-xl border-2 border-surface-container-high shadow-inner flex flex-col items-center justify-center">
+<!-- Crisp SVG Pattern representing QR Code -->
+<svg class="w-40 h-40" fill="none" height="160" viewbox="0 0 160 160" width="160" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Corners -->
+<rect fill="#FFFFFF" height="160" width="160"></rect>
+<rect fill="#FFFFFF" height="40" stroke="#000000" stroke-width="6" width="40" x="10" y="10"></rect>
+<rect fill="#000000" height="20" width="20" x="20" y="20"></rect>
+<rect fill="#FFFFFF" height="40" stroke="#000000" stroke-width="6" width="40" x="110" y="10"></rect>
+<rect fill="#000000" height="20" width="20" x="120" y="20"></rect>
+<rect fill="#FFFFFF" height="40" stroke="#000000" stroke-width="6" width="40" x="10" y="110"></rect>
+<rect fill="#000000" height="20" width="20" x="20" y="120"></rect>
+<!-- Pixel matrix dots for high fidelity -->
+<rect fill="#000000" height="8" width="8" x="60" y="15"></rect>
+<rect fill="#000000" height="8" width="8" x="75" y="15"></rect>
+<rect fill="#000000" height="8" width="8" x="90" y="15"></rect>
+<rect fill="#000000" height="8" width="8" x="60" y="30"></rect>
+<rect fill="#B85809" height="12" width="12" x="80" y="30"></rect>
+<rect fill="#000000" height="8" width="8" x="60" y="45"></rect>
+<rect fill="#000000" height="8" width="8" x="15" y="60"></rect>
+<rect fill="#000000" height="8" width="8" x="30" y="60"></rect>
+<rect fill="#000000" height="8" width="8" x="45" y="60"></rect>
+<rect fill="#000000" height="16" width="16" x="60" y="60"></rect>
+<rect fill="#000DFF" height="12" width="12" x="85" y="60"></rect>
+<rect fill="#000000" height="8" width="8" x="105" y="60"></rect>
+<rect fill="#000000" height="8" width="8" x="125" y="60"></rect>
+<rect fill="#000000" height="8" width="8" x="140" y="60"></rect>
+<rect fill="#000000" height="12" width="12" x="15" y="75"></rect>
+<rect fill="#000000" height="8" width="8" x="35" y="75"></rect>
+<rect fill="#000000" height="8" width="8" x="50" y="75"></rect>
+<rect fill="#000000" height="10" width="10" x="70" y="80"></rect>
+<rect fill="#000000" height="14" width="14" x="90" y="80"></rect>
+<rect fill="#000000" height="8" width="8" x="120" y="75"></rect>
+<rect fill="#000000" height="12" width="12" x="135" y="75"></rect>
+<rect fill="#000000" height="8" width="8" x="15" y="95"></rect>
+<rect fill="#000000" height="8" width="8" x="30" y="95"></rect>
+<rect fill="#000000" height="8" width="8" x="55" y="100"></rect>
+<rect fill="#B85809" height="10" width="10" x="75" y="100"></rect>
+<rect fill="#000000" height="8" width="8" x="95" y="100"></rect>
+<rect fill="#000000" height="12" width="12" x="110" y="100"></rect>
+<rect fill="#000000" height="8" width="8" x="130" y="95"></rect>
+<rect fill="#000000" height="12" width="12" x="60" y="120"></rect>
+<rect fill="#000000" height="8" width="8" x="80" y="120"></rect>
+<rect fill="#000000" height="12" width="12" x="100" y="120"></rect>
+<rect fill="#000000" height="8" width="8" x="120" y="120"></rect>
+<rect fill="#000000" height="12" width="12" x="135" y="120"></rect>
+<rect fill="#000000" height="8" width="8" x="60" y="140"></rect>
+<rect fill="#000000" height="12" width="12" x="75" y="135"></rect>
+<rect fill="#000000" height="10" width="10" x="95" y="140"></rect>
+<rect fill="#000000" height="10" width="10" x="115" y="135"></rect>
+<rect fill="#000000" height="10" width="10" x="135" y="140"></rect>
+</svg>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">Validade: 15 minutos</p>
+</div>
+<!-- Copia e Cola -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-bold" for="pixCodeInput">Código PIX Copia e Cola</label>
+<div class="flex items-center gap-space-xs">
+<input class="w-full bg-surface-container-low border border-surface-container rounded-lg px-space-xs py-2 text-on-surface font-mono text-[11px] truncate focus:outline-none focus:ring-1 focus:ring-primary-container" id="pixCodeInput" readonly="" type="text" value="00020126580014br.gov.bcb.pix0136petiscosdepets-checkout-sim-73805204000053039865802BR5920Petiscos de Pets LTDA6009Sao Paulo62070503***6304D892"/>
+<button class="shrink-0 px-space-sm py-2 rounded-lg bg-surface-container-highest hover:bg-surface-dim font-label-md text-label-md text-on-surface flex items-center gap-1 transition-colors duration-150 active:scale-95" id="copyPixBtn" onclick="copyPixCode()" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copiar</span>
+</button>
+</div>
+<span class="hidden text-[11px] font-label-sm text-tertiary font-bold" id="copyToast">Código PIX copiado com sucesso!</span>
+</div>
+</div>
+<!-- Option B: Simulated Credit Card Form (Hidden by default) -->
+<div class="hidden bg-surface-container-lowest rounded-xl border border-surface-container p-space-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] space-y-space-sm" id="cardPanel">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-bold" for="cardNumber">Número do Cartão</label>
+<div class="relative mt-1">
+<input class="w-full rounded-lg border border-surface-container px-3 py-2 text-body-md font-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" id="cardNumber" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant text-[20px]">credit_card</span>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-bold" for="cardHolder">Nome Impresso no Cartão</label>
+<input class="w-full mt-1 rounded-lg border border-surface-container px-3 py-2 text-body-md font-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" id="cardHolder" placeholder="ANA C ALMEIDA" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-bold" for="cardExp">Validade</label>
+<input class="w-full mt-1 rounded-lg border border-surface-container px-3 py-2 text-body-md font-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" id="cardExp" placeholder="MM/AA" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-bold" for="cardCvv">CVV</label>
+<input class="w-full mt-1 rounded-lg border border-surface-container px-3 py-2 text-body-md font-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" id="cardCvv" maxlength="4" placeholder="123" type="password"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 4: CTA Button and Footer Security Seals -->
+<section class="pt-space-xs space-y-space-sm">
+<!-- Main Action CTA -->
+<button class="w-full min-h-[48px] py-3.5 px-space-md rounded-full bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-md transition-all duration-150 active:scale-[0.98]" id="paySubmitBtn" onclick="triggerCheckoutSuccess()" type="button">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+<span>Confirmar e Pagar R$ 73,80</span>
+</button>
+<!-- Simulated Success Modal (Hidden by Default) -->
+<div class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-space-md" id="successModal">
+<div class="bg-surface-container-lowest max-w-[380px] w-full rounded-2xl p-space-lg text-center shadow-xl border border-surface-container space-y-space-sm animate-in fade-in zoom-in-95 duration-200">
+<div class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Pagamento Confirmado!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A biometria do dispositivo e a simulação de transação foram processadas com total sucesso. Seus petiscos já estão em preparação!
+            </p>
+<div class="p-space-xs bg-surface-container rounded-lg text-left text-body-sm font-body-sm space-y-1">
+<div class="flex justify-between"><span>Pedido:</span> <strong>#PET-9824</strong></div>
+<div class="flex justify-between"><span>Valor Pago:</span> <strong>R$ 73,80</strong></div>
+<div class="flex justify-between"><span>Método:</span> <strong id="paidMethodLabel">PIX Instantâneo</strong></div>
+</div>
+<button class="w-full py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md" onclick="closeSuccessModal()" type="button">
+              Voltar ao Início
+            </button>
+</div>
+</div>
+<!-- Security Badge Footer -->
+<div class="text-center pt-space-xs pb-space-md space-y-1">
+<p class="font-label-sm text-[11px] text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+            Ambiente seguro simulado para testes • GitHub Pages Ready
+          </p>
+<p class="font-body-sm text-[10px] text-on-surface-variant/70">
+            Em conformidade com Web Authentication API (FIDO2 / W3C)
+          </p>
+</div>
+</section>
+</div>
+</main>
+<script>
+    let currentMethod = 'pix';
+
+    function selectPaymentMethod(method) {
+      currentMethod = method;
+      const pixTab = document.getElementById('pixTabBtn');
+      const cardTab = document.getElementById('cardTabBtn');
+      const pixPanel = document.getElementById('pixPanel');
+      const cardPanel = document.getElementById('cardPanel');
+      const paidMethodLabel = document.getElementById('paidMethodLabel');
+
+      if (method === 'pix') {
+        pixTab.classList.add('border-2', 'border-primary-container');
+        pixTab.classList.remove('border-surface-container');
+        pixTab.setAttribute('aria-selected', 'true');
+
+        cardTab.classList.remove('border-2', 'border-primary-container');
+        cardTab.classList.add('border-surface-container');
+        cardTab.setAttribute('aria-selected', 'false');
+
+        pixPanel.classList.remove('hidden');
+        cardPanel.classList.add('hidden');
+        if (paidMethodLabel) paidMethodLabel.textContent = 'PIX Instantâneo';
+      } else {
+        cardTab.classList.add('border-2', 'border-primary-container');
+        cardTab.classList.remove('border-surface-container');
+        cardTab.setAttribute('aria-selected', 'true');
+
+        pixTab.classList.remove('border-2', 'border-primary-container');
+        pixTab.classList.add('border-surface-container');
+        pixTab.setAttribute('aria-selected', 'false');
+
+        cardPanel.classList.remove('hidden');
+        pixPanel.classList.add('hidden');
+        if (paidMethodLabel) paidMethodLabel.textContent = 'Cartão de Crédito';
+      }
+    }
+
+    function copyPixCode() {
+      const input = document.getElementById('pixCodeInput');
+      input.select();
+      input.setSelectionRange(0, 99999);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(input.value);
+      }
+      const toast = document.getElementById('copyToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+
+    function triggerCheckoutSuccess() {
+      const modal = document.getElementById('successModal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeSuccessModal() {
+      const modal = document.getElementById('successModal');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body></html>
