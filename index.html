@@ -964,20 +964,11 @@
     </div>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
+        <!-- JavaScript da aplicação -->
     <script src="./script.js"></script>
 
-
-    <!-- =========================
-         SERVICE WORKER / PWA
-    ========================== -->
-
+    <!-- Service Worker / PWA -->
     <script>
-
-        // Verifica se o navegador suporta Service Worker
         if ("serviceWorker" in navigator) {
 
             window.addEventListener("load", () => {
@@ -987,7 +978,7 @@
                     .then((registration) => {
 
                         console.log(
-                            "Service Worker registrado com sucesso:",
+                            "Service Worker registrado:",
                             registration.scope
                         );
 
@@ -995,7 +986,7 @@
                     .catch((error) => {
 
                         console.error(
-                            "Erro ao registrar o Service Worker:",
+                            "Erro ao registrar Service Worker:",
                             error
                         );
 
@@ -1004,10 +995,7 @@
             });
 
         }
-
     </script>
 
 </body>
-
 </html>
-```
