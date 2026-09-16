@@ -1,1 +1,27 @@
-{"theme_color":"#121212","background_color":"#fd8f12","icons":[{"purpose":"maskable","sizes":"512x512","src":"icon512_maskable.png","type":"image/png"},{"purpose":"any","sizes":"512x512","src":"icon512_rounded.png","type":"image/png"}],"orientation":"portrait","display":"minimal-ui","dir":"auto","lang":"pt-BR","name":"Investment","short_name":"Invest","start_url":"https://github.com/Diego9689/SPA-PetiscoPet.git","scope":"https://github.com/Diego9689/SPA-PetiscoPet.git","description":"App de pet"}
+{
+  "name": "PetiscoPet",
+  "short_name": "PetiscoPet",
+  "description": "Aplicativo de petiscos para pets.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#121212",
+  "background_color": "#FD8F12",
+  "icons": [
+    {
+      "src": "./manifest_and_icons/icon512_maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./manifest_and_icons/icon512_rounded.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
