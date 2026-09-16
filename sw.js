@@ -17,16 +17,32 @@ const FILES_TO_CACHE = [
 
 self.addEventListener("install", (event) => {
 
-    console.log("Service Worker: instalando...");
+    console.log("[SW] Instalando...");
 
     event.waitUntil(
 
         caches.open(CACHE_NAME)
-            .then((cache) => {
+            .then(async (cache) => {
 
-                console.log("Service Worker: arquivos em cache");
+                for (const file of FILES_TO_CACHE) {
 
-                return cache.addAll(FILES_TO_CACHE);
+                    try {
+
+                        await cache.add(file);
+
+                        console.log("[SW] Cacheado:", file);
+
+                    } catch (error) {
+
+                        console.error(
+                            "[SW] Não foi possível cachear:",
+                            file,
+                            error
+                        );
+
+                    }
+
+                }
 
             })
 
@@ -43,7 +59,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
 
-    console.log("Service Worker: ativado");
+    console.log("[SW] Ativando...");
 
     event.waitUntil(
 
@@ -60,6 +76,11 @@ self.addEventListener("activate", (event) => {
                         })
                         .map((cacheName) => {
 
+                            console.log(
+                                "[SW] Removendo cache antigo:",
+                                cacheName
+                            );
+
                             return caches.delete(cacheName);
 
                         })
@@ -67,34 +88,55 @@ self.addEventListener("activate", (event) => {
                 );
 
             })
+            .then(() => {
+
+                console.log("[SW] Ativado!");
+
+                return self.clients.claim();
+
+            })
 
     );
-
-    self.clients.claim();
 
 });
 
 
 // ================================
-// INTERCEPTAÇÃO DAS REQUISIÇÕES
+// REQUISIÇÕES
 // ================================
 
 self.addEventListener("fetch", (event) => {
+
+    // Apenas requisições GET
+    if (event.request.method !== "GET") {
+        return;
+    }
 
     event.respondWith(
 
         caches.match(event.request)
             .then((cachedResponse) => {
 
-                // Se estiver no cache, utiliza o cache
                 if (cachedResponse) {
-
                     return cachedResponse;
-
                 }
 
-                // Caso contrário, busca na internet
-                return fetch(event.request);
+                return fetch(event.request)
+                    .then((response) => {
+
+                        return response;
+
+                    });
+
+            })
+            .catch(() => {
+
+                console.log(
+                    "[SW] Recurso indisponível offline:",
+                    event.request.url
+                );
+
+                return caches.match("./index.html");
 
             })
 
